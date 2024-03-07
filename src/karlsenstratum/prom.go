@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/karlsen-network/karlsen-stratum-bridge/src/gostratum"
-	"github.com/karlsen-network/karlsend/app/appmessage"
+	"github.com/bugorcka/nautilusstratum/src/gostratum"
+	"github.com/Nautilus-Network/nautiliad/app/appmessage"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
