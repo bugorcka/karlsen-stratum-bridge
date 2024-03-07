@@ -9,13 +9,13 @@ services:
     command:
       - '-log=true'
       - '-stats=false'
-      - '-stratum=:5555'
+      - '-stratum=:1555'
       - '-prom=:2114'
-      - '-karlsen=host.docker.internal:42110'
-      - '-mindiff=64'
+      - '-karlsen=host.docker.internal:38110'
+      - '-mindiff=32'
       - '-vardiff=true'
     ports:
-      - 5555:5555
+      - 1555:1555
       - 2114:2114
     extra_hosts:
       - host.docker.internal:host-gateway
