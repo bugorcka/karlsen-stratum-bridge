@@ -26,7 +26,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	flag.StringVar(&cfg.StratumPort, "stratum", cfg.StratumPort, "stratum port to listen on, default `:5555`")
+	flag.StringVar(&cfg.StratumPort, "stratum", cfg.StratumPort, "stratum port to listen on, default `:1555`")
 	flag.BoolVar(&cfg.PrintStats, "stats", cfg.PrintStats, "true to show periodic stats to console, default `true`")
 	flag.StringVar(&cfg.RPCServer, "ntld, cfg.RPCServer, "address of the ntld node, default `localhost:38110`")
 	flag.DurationVar(&cfg.BlockWaitTime, "blockwait", cfg.BlockWaitTime, "time in ms to wait before manually requesting new block, default `3s`")
