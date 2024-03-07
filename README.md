@@ -1,21 +1,17 @@
-# Karlsen Stratum Adapter
+# Nautilius Stratum Adapter
 
 This is a lightweight daemon that allows mining to a local (or remote)
-karlsen node using stratum-base miners.
+Nautilius node using stratum-base miners.
 
 This daemon is confirmed working with the miners below in both dual-mining
-and karlsen-only modes (for those that support it) and Windows, Linux,
+and Nautilius-only modes (for those that support it) and Windows, Linux,
 macOS and HiveOS.
 
-* [srbminer](https://github.com/doktor83/SRBMiner-Multi/releases)
-
-Discord discussions/issues: [here](https://discord.gg/pPNESjGfb5)
-
 Huge shoutout to https://github.com/KaffinPX/KStratum and
-https://github.com/onemorebsmith/karlsen-stratum-bridge and
+https://github.com/bugorcka/nautilusstratum and
 https://github.com/rdugan/kaspa-stratum-bridge for the inspiration.
 
-Tips appreciated: `karlsen:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw`
+Tips appreciated: `nautilus:qregkvsdfsgrpjg36j3776sev7ujugnaxawvwvkda28uexrrlyguyhjrxgzjq`
 
 ## Hive Setup
 
@@ -32,7 +28,7 @@ Shares-based work allocation with miner-like periodic stat output:
  lemois         |       0.13GH/s |          3/0/0 |            0 |       6m48s
 -------------------------------------------------------------------------------
                 |       0.13GH/s |          3/0/0 |            0 |       7m20s
-========================================================= kls_bridge_v1.1.0 ===
+========================================================= ntl_bridge_v1.1.0 ===
 ```
 
 ## Variable difficulty engine (vardiff)
@@ -125,12 +121,12 @@ server type installation - details may be different for a desktop
 installation.
 
 The following will run the bridge assuming a local karlsend node with
-default port settings, and listen on port 5555 for incoming stratum
+default port settings, and listen on port 1555 for incoming stratum
 connections.
 
 ```
-git clone https://github.com/karlsen-network/karlsen-stratum-bridge.git
-cd karlsen-stratum-bridge
+git clone https://github.com/bugorcka/nautilusstratum.git
+cd nautilusstratum
 docker compose -f docker-compose-all-src.yml up -d --build
 ```
 
@@ -160,13 +156,13 @@ appropriate method for your OS. The docker commands below are assuming a
 server type installation - details may be different for a desktop
 installation.
 
-The following will run the bridge assuming a local karlsend node with
-default port settings, and listen on port 5555 for incoming stratum
+The following will run the bridge assuming a local nautilus node with
+default port settings, and listen on port 1555 for incoming stratum
 connections.
 
 ```
-git clone https://github.com/karlsen-network/karlsen-stratum-bridge.git
-cd karlsen-stratum-bridge
+git clone https://github.com/bugorcka/nautilusstratum.git
+cd nautilusstratum
 docker compose -f docker-compose-bridge-src.yml up -d --build
 ```
 
@@ -176,6 +172,6 @@ file, or overridden by modifying, adding or deleting the parameters in the
 
 These commands builds the bridge component from source, rather than the
 previous behavior of pulling down a pre-built image. You may still use
-the pre-built image by issuing the command `docker run -p 5555:5555 karlsennetwork/karlsen_bridge:latest`,
+the pre-built image by issuing the command `docker run -p 1555:1555 karlsennetwork/karlsen_bridge:latest`,
 but it is not guaranteed to be up to date, so compiling from source is
 the better alternative.
