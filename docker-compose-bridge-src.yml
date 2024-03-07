@@ -8,9 +8,9 @@ services:
     user: "0"
     command:
       - '-stats=false'
-      - '-karlsen=host.docker.internal:42110'
+      - '-karlsen=host.docker.internal:38110'
     ports:
-      - 5555:5555
+      - 1555:1555
       - 2114:2114
     extra_hosts:
       - host.docker.internal:host-gateway
