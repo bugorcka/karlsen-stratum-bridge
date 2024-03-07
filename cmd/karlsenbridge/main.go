@@ -7,7 +7,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/karlsen-network/karlsen-stratum-bridge/src/karlsenstratum"
+	"github.com/bugorcka/nautilusstratum /src/ntlstratum"
 	"gopkg.in/yaml.v2"
 )
 
