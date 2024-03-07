@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/karlsen-network/karlsend/util"
+	"github.com/Nautilus-Network/nautiliad/util"
 	"github.com/mattn/go-colorable"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
@@ -34,7 +34,7 @@ func DefaultConfig(logger *zap.Logger) StratumListenerConfig {
 	return StratumListenerConfig{
 		StateGenerator: func() any { return nil },
 		HandlerMap:     DefaultHandlers(),
-		Port:           ":5555",
+		Port:           ":1555",
 		Logger:         logger,
 	}
 }
