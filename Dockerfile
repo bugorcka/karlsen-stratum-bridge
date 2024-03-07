@@ -1,10 +1,9 @@
 # Many thanks to original author Brandon Smith (onemorebsmith).
 FROM golang:1.19.1 as builder
 
-LABEL org.opencontainers.image.description="Dockerized Karlsen Stratum Bridge"
-LABEL org.opencontainers.image.authors="Karlsen Community"
-LABEL org.opencontainers.image.source="https://github.com/karlsen-network/karlsen-stratum-bridge"
-
+LABEL org.opencontainers.image.description="Dockerized Nautilus Stratum Bridge"
+LABEL org.opencontainers.image.authors="Nautilus Community"
+LABEL org.opencontainers.image.source="https://github.com/bugorcka/nautilusstratum
 WORKDIR /go/src/app
 ADD go.mod .
 ADD go.sum .
