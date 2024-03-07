@@ -20,7 +20,7 @@ func main() {
 		log.Printf("config file not found: %s", err)
 		os.Exit(1)
 	}
-	cfg := karlsenstratum.BridgeConfig{}
+	cfg := ntldstratum.BridgeConfig{}
 	if err := yaml.Unmarshal(rawCfg, &cfg); err != nil {
 		log.Printf("failed parsing config file: %s", err)
 		os.Exit(1)
@@ -28,7 +28,7 @@ func main() {
 
 	flag.StringVar(&cfg.StratumPort, "stratum", cfg.StratumPort, "stratum port to listen on, default `:5555`")
 	flag.BoolVar(&cfg.PrintStats, "stats", cfg.PrintStats, "true to show periodic stats to console, default `true`")
-	flag.StringVar(&cfg.RPCServer, "karlsen", cfg.RPCServer, "address of the karlsend node, default `localhost:42110`")
+	flag.StringVar(&cfg.RPCServer, "ntld, cfg.RPCServer, "address of the ntld node, default `localhost:38110`")
 	flag.DurationVar(&cfg.BlockWaitTime, "blockwait", cfg.BlockWaitTime, "time in ms to wait before manually requesting new block, default `3s`")
 	flag.UintVar(&cfg.MinShareDiff, "mindiff", cfg.MinShareDiff, "minimum share difficulty to accept from miner(s), default `4096`")
 	flag.BoolVar(&cfg.VarDiff, "vardiff", cfg.VarDiff, "true to enable auto-adjusting variable min diff, default `true`")
@@ -42,7 +42,7 @@ func main() {
 
 	log.Println("----------------------------------")
 	log.Printf("initializing bridge")
-	log.Printf("\tkarlsend:        %s", cfg.RPCServer)
+	log.Printf("\tntld:            %s", cfg.RPCServer)
 	log.Printf("\tstratum:         %s", cfg.StratumPort)
 	log.Printf("\tprom:            %s", cfg.PromPort)
 	log.Printf("\tstats:           %t", cfg.PrintStats)
@@ -56,7 +56,7 @@ func main() {
 	log.Printf("\thealth check:    %s", cfg.HealthCheckPort)
 	log.Println("----------------------------------")
 
-	if err := karlsenstratum.ListenAndServe(cfg); err != nil {
+	if err := ntldstratum.ListenAndServe(cfg); err != nil {
 		log.Println(err)
 	}
 }
